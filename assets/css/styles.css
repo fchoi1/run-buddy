@@ -1,7 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* includes border and pdding addition to content */
 }
+
+body {
+    /* more on this crazy alphanumerical value in a minute! */
+    color: #39a6b2;
+    font-family: Helvetica, Arial, sans-serif; /* Font perference in order */
+  }
 
 header{
     padding: 20px 35px;
@@ -13,7 +20,7 @@ header h1{
     font-size:  36px;
     color: #fce138;
     margin: 0;
-    display: inline;
+    display: inline; /* inline display for horizontal */
 }
 
 header a{
@@ -22,7 +29,7 @@ header a{
 }
 
 header nav{
-    float: right;
+    float: right; /* align text to right */
     margin: 7px 0;
 }
 
@@ -36,3 +43,25 @@ header nav ul li a{
     font-size: 22px;
 }
 
+footer{
+    background: #fce138;
+    width:  100%;
+    padding: 40px 35px;
+}
+
+footer h2{
+    display: inline;
+    color: #024e76;
+    font-size: 30px;
+    margin: 0;
+}
+
+footer div{
+    float: right;
+    line-height: 1.5;
+    text-align: right;
+}
+
+footer a{
+    color: #240e76
+}
