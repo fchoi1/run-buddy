@@ -1,4 +1,4 @@
-# Run Buddy
+# Run Buddy INC.
 This is a run buddy PROJECT
 
 ## Purpose
