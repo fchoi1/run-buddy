@@ -1,5 +1,5 @@
 # Run Buddy
-This is a run buddy read me for module 1 programming
+This is a run buddy PROJECT
 
 ## Purpose
 
