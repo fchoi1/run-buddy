@@ -1,17 +1,16 @@
-# Run Buddy
-This is a run buddy PROJECT
+# Run Buddy, Inc
 
 ## Purpose
+A website that offers fitness training services. 
 
-A Website that offers fitnes training services
-
-## Built with 
+## Built With
 * HTML
 * CSS
 
-## Webstie
-https://fchoi1.github.io/run-buddy/
+## Website
+https://lernantino.github.io/run-buddy/
 
 ## Contribution
+Made with ❤️ by [your name]
 
-Made with ❤️ by Fabio Choi
+### ©️2019 Run Buddy, Inc 
