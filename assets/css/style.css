@@ -55,17 +55,18 @@ footer{
     background: #fce138;
     width: 100%;
     padding: 40px 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 footer h2{
-    display: inline;
     color: #024e76;
     font-size: 30px;
     margin: 0;
 }
 
 footer div{
-    float: right;
     line-height: 1.5;
     text-align: right; /*align text specifically right*/
 }
@@ -84,18 +85,39 @@ section{
     height: 600px;
     background-size: cover;
     background-position: center;
-    position: relative; /* relative to parent element */
+    /*position: relative; /* relative to parent element */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .hero-form{
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
+    width: 40%;
+    margin: 3.5%;
+    /*width: 500px; */
     color: #024e76;
     border: solid 3px #024e76; /*Border style, width, color */
-    position: absolute; /*absolute positioning defiined by top, bottom, left, right*/
-    bottom: 120px;
-    right:  140px;    
+    /* position: absolute; /*absolute positioning defiined by top, bottom, left, right*/
+    /* bottom: 120px;   */
+    /* right:  140px;   */
+}
+
+.hero-cta{
+    margin: 3.5%;
+    padding: 10;
+    font-size: 18px;
+    color: #fff;
+    width: 35%;
+    text-align: right;
+
+}
+
+.hero-cta h2{
+    font-size: 55px;
+    font-style: italic;
+    color: #fce138;
 }
 
 .hero-form h3{
@@ -148,12 +170,9 @@ section{
     border-color: #39a6b2;
 }
 
-
-
 .intro{
     text-align: center;
 }
-
 
 .intro p{
     line-height: 1.7;
