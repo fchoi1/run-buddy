@@ -46,6 +46,7 @@ header nav ul{
 }
 
 header nav ul li a{
+    padding: 10px 15px;
     margin: 0 30px;
     font-weight: lighter;
     font-size: 1.5vw;
@@ -89,6 +90,7 @@ section{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items:  flex-start;
 }
 
 .hero-form{
@@ -111,6 +113,7 @@ section{
     color: #fff;
     width: 35%;
     text-align: right;
+    line-height: 1.2;
 
 }
 
@@ -153,7 +156,7 @@ section{
 }
 
 .section-title{
-    font-size: 55px;
+    font-size: 48px;
     color: #024e76;
     /* margin-bottom: 35px;
     /* padding: 0 100px 20px 100px;
@@ -357,4 +360,11 @@ section{
     padding: 15px 0;
     font-size: 16px;
 }
+
+/* Write Medai Query from high to low */
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    
+}
+
 
