@@ -361,7 +361,8 @@ section{
 }
 
 /* Write Medai Query from high to low */
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER 
+set flex: 100% to take full width*/
 @media screen and (max-width: 980px) {
     header{
         padding-bottom: 0;
@@ -409,7 +410,7 @@ section{
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) { /* max width for 768, proprties will have theses */
     section{
         padding: 30px 15px;
     }
@@ -437,7 +438,7 @@ section{
     }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) { /* max width for 575px, proprties will have theses */
 
     .hero-form button{
         width: 100%;
