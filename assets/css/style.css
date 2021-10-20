@@ -15,6 +15,15 @@ header{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: sticky; /* sticks whenever to scroll  similar to fixed occupies no space */
+    position: -webkit-sticky; /* For safari web browser uncool */
+    top: 0;
+    /* copied from hero selector */
+    background-image: url('../images/hero-bg.jpg');  /*link background image */
+    background-size: cover;
+    background-position: 80%; /* to matach mock up */
+    background-attachment: fixed ; /* places image relative to the view port instead of element */
+
 }
 
 header h1{
@@ -23,7 +32,8 @@ header h1{
     color: #fce138;
     margin: 0;
     /* display: inline; /* inline display for horizontal */
-
+    /* Adding some shadow */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* last param is alpha (Transperency) */
 }
 
 header a{
@@ -50,6 +60,14 @@ header nav ul li a{
     margin: 0 30px;
     font-weight: lighter;
     font-size: 1.5vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* last param is alpha (Transperency) */
+}
+
+header nav ul li a:hover{ /*when hovered over element */
+    background: #fce138;
+    color: #024e76; /* text color */
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 footer{
@@ -90,6 +108,7 @@ section{
     justify-content: center;
     flex-wrap: wrap;
     align-items:  flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta{
@@ -100,7 +119,7 @@ section{
     width: 35%;
     text-align: right;
     line-height: 1.2;
-
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* last param is alpha (Transperency) */
 }
 
 .hero-cta h2{
@@ -110,7 +129,7 @@ section{
 }
 
 .hero-form{
-    background-color: #fce138;
+    background-color: rgba(255, 255, 56, 0.8);  
     padding: 20px;
     width: 40%;
     margin: 3.5%;
@@ -120,7 +139,9 @@ section{
     /* position: absolute; /*absolute positioning defiined by top, bottom, left, right*/
     /* bottom: 120px;   */
     /* right:  140px;   */
+    border-radius: 15px; /* radius of border */  
 }
+
 .hero-form h3{
     font-size: 24px;
     margin: 0px;
@@ -143,6 +164,13 @@ section{
     color: #024e76;
     width: 100%;
     margin-bottom: 15px; /*specific spacing for bottom margin */
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+}
+
+.form-input:focus{ /*When an element has been clicked on */
+    background-color: rgba(255, 255, 255, 1);
+    outline: none; /* removes outline of input */
 }
 
 .hero-form button{
@@ -151,6 +179,11 @@ section{
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px; /* radius of border */
+}
+
+.hero-form button:hover{
+    background-color: #39a6b2;
 }
 
 .section-title{
@@ -195,11 +228,15 @@ section{
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom:  1px solid #39a6b2;
+    /* border-bottom:  1px solid #39a6b2; */
     display: flex;
     flex-wrap: wrap;
     align-items: center; /* secondary exis (cross axis) */
     justify-content: space-between; /* main axis */
+}
+
+.step:not(:last-child){/*pesudo selector last-child of parent */
+    border-bottom:  1px solid #39a6b2;
 }
 
 .step h3{
@@ -347,7 +384,14 @@ section{
     color: #024e76;
     margin-bottom: 15px;
     margin-top: 5px;
-    width: 100%
+    width: 100%;
+    border-radius: 10px; /* radius of border */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form input:focus, .contact-form textarea:focus{ /*When an element has been clicked on */
+    background-color: rgba(255, 255, 255, 1);
+    outline: none; /* removes outline of input */
 }
 
 .contact-form button{
@@ -358,6 +402,12 @@ section{
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px; /* radius of border */
+}
+
+.contact-form button:hover{
+    color: #fce138;
+    background-color: #39a6b2;
 }
 
 /* Write Medai Query from high to low */
@@ -367,6 +417,7 @@ set flex: 100% to take full width*/
     header{
         padding-bottom: 0;
         justify-content: center;
+        position: relative; /* undo stickness */
     }
     
     header h1{
