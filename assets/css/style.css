@@ -1,3 +1,11 @@
+/* Global variables to use */
+:root{
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+    --primary-color-transparent: rgba(252,225,56, 0.8);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,31 +13,33 @@
 }
 
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif; /* Font perference in order */
 }
 
 header{
     padding: 20px 35px;
-    background-color: #39a6b2;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: sticky; /* sticks whenever to scroll  similar to fixed occupies no space */
-    position: -webkit-sticky; /* For safari web browser uncool */
-    top: 0;
-    /* copied from hero selector */
     background-image: url('../images/hero-bg.jpg');  /*link background image */
     background-size: cover;
     background-position: 80%; /* to matach mock up */
-    background-attachment: fixed ; /* places image relative to the view port instead of element */
-
+    background-attachment: fixed; /* places image relative to the view port instead of element */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    /* copied from hero selector */
+   
+    position: sticky; /* sticks whenever to scroll  similar to fixed occupies no space */
+    position: -webkit-sticky; /* For safari web browser uncool */
+    top: 0;
+    z-index: 9999;
 }
 
 header h1{
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: var(--primary-color);
     margin: 0;
     /* display: inline; /* inline display for horizontal */
     /* Adding some shadow */
@@ -37,7 +47,7 @@ header h1{
 }
 
 header a{
-    color: #fce138;  
+    color: var(--primary-color);  
     text-decoration: none;  
 }
 
@@ -52,35 +62,34 @@ header nav ul{
     justify-content: space-between;
     align-items: center;
     list-style: none;
-
 }
 
 header nav ul li a{
     padding: 10px 15px;
-    margin: 0 30px;
     font-weight: lighter;
     font-size: 1.5vw;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* last param is alpha (Transperency) */
 }
 
 header nav ul li a:hover{ /*when hovered over element */
-    background: #fce138;
-    color: #024e76; /* text color */
+    background: var(--primary-color);
+    color: var(--secondary-color); /* text color */
     border-radius: 15px;
     text-shadow: none;
 }
 
 footer{
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    color: var(--primary-color)
 }
 
 footer h2{
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
     margin: 0;
 }
@@ -102,13 +111,13 @@ section{
 .hero{
     background-image: url('../images/hero-bg.jpg');  /*link background image */
     background-size: cover;
-    background-position: center;
+    background-position: 80%;
+    background-attachment: fixed ;
     /*position: relative; /* relative to parent element */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items:  flex-start;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta{
@@ -125,17 +134,19 @@ section{
 .hero-cta h2{
     font-size: 55px;
     font-style: italic;
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .hero-form{
-    background-color: rgba(255, 255, 56, 0.8);  
+    background-color: var(--primary-color-transparent);  
     padding: 20px;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
     /*width: 500px; */
-    color: #024e76;
-    border: solid 3px #024e76; /*Border style, width, color */
+    color: var(--secondary-color);
+    border: solid 3px var(--secondary-color); /*Border style, width, color */
     /* position: absolute; /*absolute positioning defiined by top, bottom, left, right*/
     /* bottom: 120px;   */
     /* right:  140px;   */
@@ -157,11 +168,11 @@ section{
 
 /*Form input text Class*/
 .form-input{ 
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px; /*specific spacing for bottom margin */
     background-color: rgba(255, 255, 255, 0.75);
@@ -173,9 +184,71 @@ section{
     outline: none; /* removes outline of input */
 }
 
+.checkbox-wrapper input, .radio-wrapper input{
+    opacity: 0; /* box exist, only transparent */
+}
+
+.checkbox-wrapper label, .radio-wrapper label{
+    position: relative;
+    left: 10px; /* for relative position */
+    margin: 10px;
+    line-height: 1.6;
+}
+
+.checkbox-wrapper label::before,.radio-wrapper label::before { /* adds content before and after element*/
+    content: "";
+    display: inline-block;
+    height: 20px; /*add a box size with visiable border */
+    width: 20px; 
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid var(--secondary-color);  
+    position: absolute; 
+    top: -4px; /*absolute positioning */
+    left: -30px; /*absolute positioning */
+}
+
+.radio-wrapper label::after { /* just an overlay from before, not an after "action" pseudo class */
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /*Change to circle*/
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px; /*absolute positioning */
+    top: -3px;/*absolute positioning */
+background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color)); /* better graphics gradient (type, first gradient, second gradient */
+}
+  
+.checkbox-wrapper label::after { /* just an overlay from before, not an after "action" pseudo class */
+    content: "";
+    display: inline-block;
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color); /* used to create a check mark */
+    border-bottom: 2px solid var(--secondary-color); /* used to create a check mark */
+    transform: rotate(-58deg); /* used to create a check mark */
+    position: absolute;
+    left: -26px; /*absolute positioning */
+    top: 1px; /*absolute positioning */
+}
+
+.radio-wrapper label::before {
+    border-radius: 50%;
+}
+
+/*Hide checked state */
+.checkbox-wrapper input + label::after, .radio-wrapper input + label::after{ /* + selector selects next element beside it */
+    content: none;
+}
+/*Show checked state */
+.checkbox-wrapper input:checked + label::after, .radio-wrapper input:checked + label::after{ /* + selector selects next element beside it */
+    content: "";
+}
+
+
 .hero-form button{
-    color: #fce138;
-    background-color: #024e76;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -183,12 +256,12 @@ section{
 }
 
 .hero-form button:hover{
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
 }
 
 .section-title{
     font-size: 48px;
-    color: #024e76;
+    color: var(--secondary-color);
     /* margin-bottom: 35px;
     /* padding: 0 100px 20px 100px;
     /* display: inline-block;  /* both inline and block (set dimensions) */
@@ -204,16 +277,16 @@ section{
 }
 
 .primary-border{
-    border-color: #fce138;
+    border-color: var(--primary-color);
 }
 
 .secondary-border{
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
 }
 
 .intro p{
     line-height: 1.7;
-    color: #39a6b2;
+    color: var(--tertiary-color);
     width: 80%;
     font-size: 20px;
     margin: 0 auto;
@@ -221,14 +294,14 @@ section{
 }
 
 .steps{
-    background-color: #fce138;
+    background-color: var(--primary-color);
 }
 
 .step{
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    /* border-bottom:  1px solid #39a6b2; */
+    /* border-bottom:  1px solid var(--tertiary-color); */
     display: flex;
     flex-wrap: wrap;
     align-items: center; /* secondary exis (cross axis) */
@@ -236,11 +309,11 @@ section{
 }
 
 .step:not(:last-child){/*pesudo selector last-child of parent */
-    border-bottom:  1px solid #39a6b2;
+    border-bottom:  1px solid var(--tertiary-color);
 }
 
 .step h3{
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 46px;
     flex: 1 30%;
 }
@@ -258,13 +331,13 @@ section{
 
 .step-text p{
     font-size: 18px ;
-    color: #39a6b2;
+    color: var(--tertiary-color);
 }
 
 .step-text h4{
     font-size: 26px;
     line-height: 1.5;
-    color: #024e76;
+    color: var(--secondary-color);
     
 }
 
@@ -289,8 +362,8 @@ section{
 .trainer{
     /* width: 900px; */
     margin: 20px;
-    background: #024e76;
-    color: #fce138;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     /* overflow: auto; /* Needed for zero hieght defined in article, and inside elements are floated overflows child content into div */
     flex: 1; /* Spaced evenly */
 }
@@ -329,11 +402,11 @@ section{
 }
 
 .contact{
-    background-color: #024e76;
+    background-color: var(--secondary-color);
 }
 
 .contact h2{
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact-info{
@@ -360,7 +433,7 @@ section{
 }
 
 .contact-info h3{
-    color: #fce138;
+    color: var(--primary-color);
     font-size: 32px;
   }
   
@@ -373,15 +446,15 @@ section{
 }
   
 .contact-info a{
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact-form input, .contact-form textarea{
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     margin-bottom: 15px;
     margin-top: 5px;
     width: 100%;
@@ -397,8 +470,8 @@ section{
 .contact-form button{
     width: 100%;
     border: none;
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
@@ -406,8 +479,8 @@ section{
 }
 
 .contact-form button:hover{
-    color: #fce138;
-    background-color: #39a6b2;
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
 }
 
 /* Write Medai Query from high to low */

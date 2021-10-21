@@ -38,14 +38,20 @@
                     <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input"/>
                     <p> <!-- Radio Button Input-->
                         <label>Have you worked out with a trainer before?</label>
-                        <input type="radio" name="trained-confirm" id="trained-yes" class="radio-input"/>
-                        <label for="trained-yes">Yes</label>
-                        <input type="radio" name="trained-confirm" id="trained-no" class="radio-input"/>
-                        <label for="trained-no">No</label>
+                        <span class="radio-wrapper"> <!-- Adding wrapper to make it look better -->
+                            <input type="radio" name="trained-confirm" id="trained-yes" class="radio-input"/>
+                            <label for="trained-yes">Yes</label>
+                        <span class="radio-wrapper"> <!-- Adding wrapper to make it look better -->
+                            <input type="radio" name="trained-confirm" id="trained-no" class="radio-input"/>
+                            <label for="trained-no">No</label>
+                        </span>
+
                     </p>
                     <p><!-- Check box-->
-                        <label for="acknowledge">I acknowledge that I am at least 18 years of age.</label>
-                        <input type="checkbox" name="acknowledge-confirm" id="acknowledge"/>
+                        <span class="checkbox-wrapper"> <!-- Adding wrapper to make it look better -->
+                            <input type="checkbox" name="acknowledge-confirm" id="acknowledge"/>
+                            <label for="acknowledge">I acknowledge that I am at least 18 years of age.</label>
+                        </span>
                     </p>
                     <button type="submit">
                         Get running!
